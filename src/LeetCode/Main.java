@@ -3,8 +3,10 @@ package LeetCode;
 import java.util.Hashtable;
 
 public class Main {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
+		startTimer("time");
 		System.out.print("app start!\r\n");
+		System.out.print(endTimer("time"));
 	}
 	
 	private static Hashtable<String, Long> timerData = new Hashtable<String, Long>();
@@ -17,10 +19,11 @@ public class Main {
 	}
 	
 	static long endTimer(String key) throws Exception{
+		long now = System.nanoTime();
 		if(!timerData.containsKey(key)){
 			throw new Exception("timer key not exist:" + key);
 		}
-		long timeSpan = System.nanoTime() - timerData.get(key);
+		long timeSpan = now - timerData.get(key);
 		timerData.remove(key);
 		return timeSpan;
 	}
