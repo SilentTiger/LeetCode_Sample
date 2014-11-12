@@ -4,9 +4,14 @@ import java.util.Hashtable;
 
 public class Main {
 	public static void main(String[] args) throws Exception {
-		startTimer("time");
-		System.out.print("app start!\r\n");
-		System.out.print(endTimer("time"));
+		LRUCache l = new LRUCache(10);
+		l.set(10, 10);
+		l.set(9, 9);
+		l.set(8, 8);
+		l.set(7, 7);
+		l.get(9);
+		l.get(9);
+		l.list();
 	}
 	
 	private static Hashtable<String, Long> timerData = new Hashtable<String, Long>();
