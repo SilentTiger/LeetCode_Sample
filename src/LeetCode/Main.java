@@ -4,8 +4,10 @@ import java.util.Hashtable;
 
 public class Main {
 	public static void main(String[] args) throws Exception {
-		ZigZagConversion zzc = new ZigZagConversion();
-		System.out.print(zzc.convert("AB", 1));
+		ExcelSheetColumnNumber zzc = new ExcelSheetColumnNumber();
+		startTimer("test");
+		System.out.println(zzc.titleToNumber("B"));
+		System.out.print(endTimer("test"));
 	}
 
 	private static Hashtable<String, Long> timerData = new Hashtable<String, Long>();
