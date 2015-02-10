@@ -4,10 +4,9 @@ import java.util.Hashtable;
 
 public class Main {
 	public static void main(String[] args) throws Exception {
-		ExcelSheetColumnNumber zzc = new ExcelSheetColumnNumber();
-		startTimer("test");
-		System.out.println(zzc.titleToNumber("B"));
-		System.out.print(endTimer("test"));
+		ExcelSheetColumnTitle zzc = new ExcelSheetColumnTitle();
+		
+		System.out.println(zzc.convertToTitle(27));
 	}
 
 	private static Hashtable<String, Long> timerData = new Hashtable<String, Long>();
