@@ -7,37 +7,42 @@ public class ZigZagConversion {
 		ArrayList<String[]> charContainer = new ArrayList<String[]>();
 
 		String[] tempCharArray = new String[nRows];
-		int tempCharIndex = 0;
-		int constIndex = Math.max((int) (nRows / 2 - 1), 0);
-		
+		boolean toDown = true;
+		int currentPosition = 0;
+
 		for (int i = 0; i < s.length(); i++) {
-			if (tempCharIndex < nRows) {
-				tempCharArray[tempCharIndex] = s.substring(i, i + 1);
-				tempCharIndex++;
+			if (toDown) {
+				tempCharArray[currentPosition] = s.substring(i, i + 1);
+				currentPosition++;
+				if (currentPosition == nRows) {
+					currentPosition = Math.max(0, currentPosition - 2);
+					charContainer.add(tempCharArray);
+					tempCharArray = new String[nRows];
+					if (currentPosition != 0) {
+						toDown = false;
+					}
+
+				}
 			} else {
+				tempCharArray[currentPosition] = s.substring(i, i + 1);
+				currentPosition = Math.max(0, currentPosition - 1);
 				charContainer.add(tempCharArray);
 				tempCharArray = new String[nRows];
-				tempCharArray[constIndex] = s.substring(i, i + 1);
-				charContainer.add(tempCharArray);
-				tempCharArray = new String[nRows];
-				tempCharIndex = 0;
+				if (currentPosition == 0) {
+					toDown = true;
+				}
 			}
 		}
 		charContainer.add(tempCharArray);
 
 		StringBuilder sb = new StringBuilder();
-		int r = 0, c = 0;
-		while (r < nRows) {
-			while (c < charContainer.size()) {
-				if(charContainer.get(c)[r] != null){
-					sb.append(charContainer.get(c)[r]);
+		for (int j = 0; j < nRows; j++) {
+			for (int i = 0; i < charContainer.size(); i++) {
+				if (charContainer.get(i)[j] != null) {
+					sb.append(charContainer.get(i)[j]);
 				}
-				c++;
 			}
-			c = 0;
-			r++;
 		}
-		
-		return sb.toString();
+		return sb.toString().trim();
 	}
 }
