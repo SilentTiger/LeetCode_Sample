@@ -6,7 +6,7 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 		ExcelSheetColumnTitle zzc = new ExcelSheetColumnTitle();
 		
-		System.out.println(zzc.convertToTitle(27));
+		System.out.println(zzc.convertToTitle(687));
 	}
 
 	private static Hashtable<String, Long> timerData = new Hashtable<String, Long>();
