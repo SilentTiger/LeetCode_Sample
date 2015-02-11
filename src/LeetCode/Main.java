@@ -4,9 +4,9 @@ import java.util.Hashtable;
 
 public class Main {
 	public static void main(String[] args) throws Exception {
-		MajorityElement zzc = new MajorityElement();
+		CompareVersionNumbers solution = new CompareVersionNumbers();
 
-		System.out.println(zzc.majorityElement(new int[] { 1, 2, 3 }));
+		System.out.println(solution.compareVersion("1.0", "1"));
 	}
 
 	private static Hashtable<String, Long> timerData = new Hashtable<String, Long>();
