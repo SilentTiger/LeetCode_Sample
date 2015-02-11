@@ -4,9 +4,15 @@ import java.util.Hashtable;
 
 public class Main {
 	public static void main(String[] args) throws Exception {
-		CompareVersionNumbers solution = new CompareVersionNumbers();
+		MinStack solution = new MinStack();
 
-		System.out.println(solution.compareVersion("1.0", "1"));
+		solution.push(0);
+		solution.push(1);
+		solution.push(0);
+
+		System.out.println(solution.getMin());
+		solution.pop();
+		System.out.println(solution.getMin());
 	}
 
 	private static Hashtable<String, Long> timerData = new Hashtable<String, Long>();
