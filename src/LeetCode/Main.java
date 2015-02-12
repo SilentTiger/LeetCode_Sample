@@ -1,24 +1,31 @@
 package LeetCode;
 
-import java.util.ArrayList;
 import java.util.Hashtable;
 
 public class Main {
 	public static void main(String[] args) throws Exception {
-		MinStack solution = new MinStack();
-		solution.push(-10);
-		solution.push(14);
-		solution.getMin();
-		solution.getMin();
-		solution.push(-20);
-		solution.getMin();
-		solution.getMin();
-		solution.top();
-		solution.getMin();
-		solution.pop();
-		solution.push(10);
-		solution.push(-7);
-		solution.getMin();
+		FactorialTrailingZeroes solution = new FactorialTrailingZeroes();
+		//System.out.println(solution.log(0, 5));
+		
+		startTimer("1808548329");
+		System.out.println(solution.trailingZeroes(1808548329));
+		System.out.println(endTimer("1808548329"));
+
+		startTimer("2147483644");
+		System.out.println(solution.trailingZeroes(2147483644));
+		System.out.println(endTimer("2147483644"));
+		
+		startTimer("2147483645");
+		System.out.println(solution.trailingZeroes(2147483645));
+		System.out.println(endTimer("2147483645"));
+		
+		startTimer("2147483646");
+		System.out.println(solution.trailingZeroes(2147483646));
+		System.out.println(endTimer("2147483646"));
+
+		startTimer("2147483647");
+	    System.out.println(solution.trailingZeroes(2147483647));
+		System.out.println(endTimer("2147483647"));
 	}
 
 	private static Hashtable<String, Long> timerData = new Hashtable<String, Long>();
