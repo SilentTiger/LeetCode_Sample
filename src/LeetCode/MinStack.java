@@ -17,9 +17,9 @@ class MinStack {
 		int lastIndex = stackList.size() - 1;
 		stackList.remove(lastIndex);
 		minValueList.remove(lastIndex);
-		if(lastIndex == 0){
+		if (lastIndex == 0) {
 			currentMinValue = Integer.MAX_VALUE;
-		}else{
+		} else {
 			currentMinValue = minValueList.get(lastIndex - 1);
 		}
 	}
