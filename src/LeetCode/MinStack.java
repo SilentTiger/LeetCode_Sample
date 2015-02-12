@@ -1,44 +1,34 @@
 package LeetCode;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 
 class MinStack {
-	LinkedList<Integer> sortList = new LinkedList<Integer>();
-	LinkedList<Integer> stackList = new LinkedList<Integer>();
+	int currentMinValue = Integer.MAX_VALUE;
+	ArrayList<Integer> minValueList = new ArrayList<Integer>();
+	ArrayList<Integer> stackList = new ArrayList<Integer>();
 
 	public void push(int x) {
-		Integer v = x;
-		stackList.addLast(v);
-		
-		if(sortList.size() == 0){
-			sortList.addLast(v);
-			return;
-		}
-
-		int length = sortList.size();
-		for (int targetIndex = 0; targetIndex < length; targetIndex++) {
-			if(sortList.get(targetIndex) > v){
-				if(targetIndex > 0){
-					sortList.add(targetIndex - 1, v);
-				}else{
-					sortList.addFirst(v);
-				}
-				return;
-			}
-		}
-		sortList.addLast(v);
+		stackList.add(x);
+		currentMinValue = Math.min(x, currentMinValue);
+		minValueList.add(currentMinValue);
 	}
 
 	public void pop() {
-		Integer target = stackList.removeLast();
-		sortList.remove(target);
+		int lastIndex = stackList.size() - 1;
+		stackList.remove(lastIndex);
+		minValueList.remove(lastIndex);
+		if(lastIndex == 0){
+			currentMinValue = Integer.MAX_VALUE;
+		}else{
+			currentMinValue = minValueList.get(lastIndex - 1);
+		}
 	}
 
 	public int top() {
-		return stackList.getLast();
+		return stackList.get(stackList.size() - 1);
 	}
 
 	public int getMin() {
-		return sortList.getFirst();
+		return minValueList.get(minValueList.size() - 1);
 	}
 }

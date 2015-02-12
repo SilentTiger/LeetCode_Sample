@@ -1,18 +1,24 @@
 package LeetCode;
 
+import java.util.ArrayList;
 import java.util.Hashtable;
 
 public class Main {
 	public static void main(String[] args) throws Exception {
 		MinStack solution = new MinStack();
-
-		solution.push(0);
-		solution.push(1);
-		solution.push(0);
-
-		System.out.println(solution.getMin());
+		solution.push(-10);
+		solution.push(14);
+		solution.getMin();
+		solution.getMin();
+		solution.push(-20);
+		solution.getMin();
+		solution.getMin();
+		solution.top();
+		solution.getMin();
 		solution.pop();
-		System.out.println(solution.getMin());
+		solution.push(10);
+		solution.push(-7);
+		solution.getMin();
 	}
 
 	private static Hashtable<String, Long> timerData = new Hashtable<String, Long>();
