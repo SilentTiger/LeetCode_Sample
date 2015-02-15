@@ -4,28 +4,13 @@ import java.util.Hashtable;
 
 public class Main {
 	public static void main(String[] args) throws Exception {
-		FactorialTrailingZeroes solution = new FactorialTrailingZeroes();
-		//System.out.println(solution.log(0, 5));
-		
+		RemoveElement solution = new RemoveElement();
+		// System.out.println(solution.log(0, 5));
+
 		startTimer("1808548329");
-		System.out.println(solution.trailingZeroes(1808548329));
+		System.out.println(solution.removeElement(new int[] { 2 }, 3));
 		System.out.println(endTimer("1808548329"));
 
-		startTimer("2147483644");
-		System.out.println(solution.trailingZeroes(2147483644));
-		System.out.println(endTimer("2147483644"));
-		
-		startTimer("2147483645");
-		System.out.println(solution.trailingZeroes(2147483645));
-		System.out.println(endTimer("2147483645"));
-		
-		startTimer("2147483646");
-		System.out.println(solution.trailingZeroes(2147483646));
-		System.out.println(endTimer("2147483646"));
-
-		startTimer("2147483647");
-	    System.out.println(solution.trailingZeroes(2147483647));
-		System.out.println(endTimer("2147483647"));
 	}
 
 	private static Hashtable<String, Long> timerData = new Hashtable<String, Long>();
