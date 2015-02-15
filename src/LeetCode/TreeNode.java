@@ -1,6 +1,6 @@
 package LeetCode;
 
-//this class is for PathSum, MinimumDepthOfBinaryTree
+//this class is for PathSum, MinimumDepthOfBinaryTree, ...
 public class TreeNode {
 	int val;
 	TreeNode left;
